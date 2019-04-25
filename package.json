@@ -1,6 +1,6 @@
 {
   "name": "axios-for-aws",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "HTTP client for aws lambda functions",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
