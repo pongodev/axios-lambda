@@ -7,7 +7,6 @@ import { aggregateParameters } from './utils/parameters';
 export interface OptionalAxiosLambdaConfiguration {
   readonly host?: string;
   readonly httpsAgent?: https.Agent;
-  readonly body?: string;
 }
 interface AxiosLambdaResponseOfT<T> {
   readonly data: T;
@@ -20,8 +19,8 @@ export async function axiosLambda(
   url: string,
   config: OptionalAxiosLambdaConfiguration
 ): Promise<AxiosLambdaResponse> {
-  const { httpMethod } = event;
-  const { host, httpsAgent, body } = {
+  const { httpMethod, body } = event;
+  const { host, httpsAgent } = {
     ...config,
     httpsAgent: new https.Agent({ rejectUnauthorized: false })
   };
