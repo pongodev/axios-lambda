@@ -11,6 +11,9 @@ export interface OptionalAxiosLambdaConfiguration {
 interface AxiosLambdaResponseOfT<T> {
   readonly data: T;
   readonly status: number;
+  readonly headers: any;
+  readonly config: any;
+  readonly request?: any;
 }
 export interface AxiosLambdaResponse extends AxiosLambdaResponseOfT<any> {}
 
